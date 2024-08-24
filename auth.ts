@@ -8,7 +8,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     Discord({
         clientId: process.env.DISCORD_CLIENT_ID,
         clientSecret: process.env.DISCORD_CLIENT_SECRET,
-        authorization : process.env.DISCORD_AUTHORIZATION,
+        authorization : process.env.DISCORD_AUTHORIZATION as string,
     })
   ],
   session : { strategy :"jwt", maxAge: 30 * 24 * 60 * 60 },
